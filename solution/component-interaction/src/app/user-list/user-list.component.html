@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-8">
+    <h3>Users</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Active</th>
+          <th>show</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <!--
+            TODO!
+            1. Make 5 td elements.
+            2. Show the following properties of the user
+              in the td elements with interpolation:
+              id, name, email, address, active
+           -->
+           <td>{{ user.id }}</td>
+           <td>{{ user.name }}</td>
+           <td>{{ user.email }}</td>
+           <td>{{ user.address }}</td>
+           <td>{{ user.active }}</td>
+
+
+          <td>
+            <!--
+              TODO!
+              1. Create here a button with btn and btn-info css classes.
+              2. Show the eye font-awesome icon in the button.
+              3. Set an event-binding on the button:
+                when the user clicks on the button,
+                calls the onSelectUser method with the user.
+            -->
+            <button (click)="onSelectUser(user)" class="btn btn-info">
+              <i class="fa fa-eye"></i>
+            </button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-4 pt-5">
+    <!--
+      TODO!
+      1. Include here the app-user-detail component.
+      2. Set the user property of the app-user-detail with property-binding,
+        its value should be the currentUser.
+      3. Set the delUser event of the app-user-detail component
+        to the onDeleteUser method,
+        and give it the $event parameter.
+     -->
+    <app-user-detail
+     [user]="currentUser"
+     (delUser)="onDeleteUser($event)"
+    ></app-user-detail>
+
+  </div>
+</div>

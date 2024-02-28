@@ -1,0 +1,34 @@
+<div class="card user-card" *ngIf="user.id > 0">
+  <div class="card-header">Selected User</div>
+  <div class="card-body">
+    <!--
+      TODO!
+      Show the following four properties of the user,
+      in four p elements:
+      id, name, email, address
+     -->
+     <p>{{ user.id }}</p>
+     <p>{{ user.name }}</p>
+     <p>{{ user.email }}</p>
+     <p>{{ user.address }}</p>
+
+
+    <p>
+      <!--
+        TODO!
+        1. Create here a button, with the btn, btn-danger and btn-block classes.
+        2. Should be a trash icon and the delete text in the button.
+        3. Set the click event to the button with event-binding,
+        when the user clicks on the button, the onDelete method shuld run
+        with the user.
+       -->
+       <button
+        (click)="onDelete(user)"
+        class="btn btn-danger btn-block">
+        <i class="fa fa-trash"></i> delete
+       </button>
+
+
+    </p>
+  </div>
+</div>

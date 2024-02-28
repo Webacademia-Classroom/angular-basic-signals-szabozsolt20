@@ -1,0 +1,30 @@
+{
+  "name": "ts-basic-practice001-types",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test:01": "jest -i __tests__/test-app.ts -t \"first-app-exists\" --verbose=false",
+    "test:02": "jest -i __tests__/test-app.ts -t \"first-app-style\" --verbose=false",
+    "test:03": "jest -i __tests__/test-app.ts -t \"first-app-routing\" --verbose=false",
+    "test:04": "jest -i __tests__/test-app.ts -t \"second-app-exists\" --verbose=false",
+    "test:05": "jest -i __tests__/test-app.ts -t \"second-app-style\" --verbose=false",
+    "test:06": "jest -i __tests__/test-app.ts -t \"second-app-routing\" --verbose=false",
+    "test:07": "jest -i __tests__/test-app.ts -t \"bootstrap-download\" --verbose=false",
+    "test:08": "jest -i __tests__/test-app.ts -t \"bootstrap-set\" --verbose=false",
+    "test:09": "jest -i __tests__/test-app.ts -t \"font-download\" --verbose=false",
+    "test:10": "jest -i __tests__/test-app.ts -t \"font-set\" --verbose=false",
+    "test": "jest -i __tests__/test-app.ts --verbose=false"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.10",
+    "jest": "^29.7.0",
+    "lodash": "^4.17.21",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  }
+}
