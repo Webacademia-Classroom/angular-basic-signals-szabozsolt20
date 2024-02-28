@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-6 col-md-2 text-center">
+    <div><strong>Sum</strong></div>
+    <div>
+      <strong class="sumprice-container">
+        <!-- Show allPrice. -->
+        ${{ allPrice() }}
+      </strong>
+    </div>
+  </div>
+</div>
+
+<div class="row my-3">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          @for (col of displayedColumns; track $index) {
+          <th>{{ col | titlecase }}</th>
+          }
+          <th>manage</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (element of products(); track $index) {
+        <tr>
+          @for (col of displayedColumns; track $index) {
+          <td>{{ element[col] }}</td>
+          }
+          <td>
+            <div class="btn-group">
+              <button [routerLink]="['/product', 'edit', element.id]" class="btn btn-info">
+                <i class="fa fa-edit"></i>
+              </button>
+              <button (click)="onRemove(element)" class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
