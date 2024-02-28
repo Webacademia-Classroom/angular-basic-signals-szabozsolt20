@@ -1,0 +1,77 @@
+@if (list() | filter:filterText(); as list) {
+
+  <div class="row">
+    <div class="col-12 col-md-4 mx-1">
+      <input
+        (input)="updateFilterText($event)"
+        type="text"
+        class="form-control"
+        placeholder="Filter">
+      <div class="my-1">
+        {{ list.length }}/{{ listQty }} rows in the table
+      </div>
+    </div>
+    <div class="col-6 col-md-2 text-center">
+      <div><strong>Sum</strong></div>
+      <div>
+        <strong class="sumprice-container">
+          <!-----------------------------------------------------
+            TODO!
+            Show the value of sumPrice signal with interpolation,
+            after this comment.
+          ------------------------------------------------------->
+          {{ sumPrice() }}</strong>
+      </div>
+    </div>
+    <div class="col-6 col-md-2 text-center">
+      <div>
+        <strong>Actives</strong>
+      </div>
+      <div>
+        <strong class="activeqty-container">
+          <!------------------------------------------------------
+              TODO!
+              Show the value of activeQty signal with interpolation,
+              after this comment.
+            -------------------------------------------------------->
+            {{ activeQty() }}
+        </strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            @for (col of displayedColumns; track $index) {
+              <th>{{ col | titlecase }}</th>
+            }
+            <th>manage</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (element of list; track $index) {
+            <tr>
+              @for (col of displayedColumns; track $index) {
+                <td>{{ element[col] }}</td>
+              }
+              <td>
+                <div class="btn-group">
+                  <button [routerLink]="['/product', 'edit', element.id]" class="btn btn-info">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button (click)="onRemove(element)" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+}
