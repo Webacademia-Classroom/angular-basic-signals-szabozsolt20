@@ -1,0 +1,29 @@
+<div
+  class="sticky-top d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
+>
+  <h5 class="my-0 mr-md-auto font-weight-normal me-auto">{{ title }}</h5>
+  <nav class="my-2 my-md-0 mr-md-3 d-flex">
+    <a
+      class="p-2 text-dark nav-link"
+      [href]="menuItems[2].link"
+    >{{ menuItems[2].title }}</a>
+    <a
+      class="p-2 text-dark nav-link"
+      [href]="menuItems[1].link"
+    >{{ menuItems[1].title }}</a>
+    <a
+      class="p-2 text-dark nav-link"
+      [href]="menuItems[0].link"
+    >{{ menuItems[0].title }}</a>
+    <a
+      class="p-2 text-dark nav-link"
+      [href]="menuItems[3].link"
+    >{{ menuItems[3].title }}</a>
+  </nav>
+  <a
+    class="btn btn-outline-primary"
+    href="#"
+  >{{ regButtonText }}</a>
+</div>
+
+<app-pricing-page></app-pricing-page>
